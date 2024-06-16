@@ -1,5 +1,3 @@
-@import url("torillic/torillic.css");
-
 body {
     padding: 0;
     margin: 0;
@@ -8,7 +6,3 @@ body {
 .torillic-background {
     padding: 4rem;
 }
-
-
-
-

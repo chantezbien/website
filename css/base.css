@@ -2,69 +2,69 @@
 /* Crimson Text (headings) */
 @font-face {
   font-family: "Crimson Text";
-  src: url('assets/fonts/CrimsonText/CrimsonText-Regular.ttf');
+  src: url('../webfonts/CrimsonText-Regular.ttf');
   font-weight: 400;
 }
 @font-face {
   font-family: "Crimson Text";
-  src: url('assets/fonts/CrimsonText/CrimsonText-Italic.ttf');
+  src: url('../webfonts/CrimsonText-Italic.ttf');
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Crimson Text";
-  src: url('assets/fonts/CrimsonText/CrimsonText-Bold.ttf');
+  src: url('../webfonts/CrimsonText-Bold.ttf');
   font-weight: 700;
 }
 @font-face {
   font-family: "Crimson Text";
-  src: url('assets/fonts/CrimsonText/CrimsonText-BoldItalic.ttf');
+  src: url('../webfonts/CrimsonText-BoldItalic.ttf');
   font-weight: 700;
   font-style: italic;
 }
 /* Alegreya (body) */
 @font-face {
   font-family: "Alegreya";
-  src: url('assets/fonts/Alegreya/Alegreya-Regular.ttf');
+  src: url('../webfonts/Alegreya-Regular.ttf');
   font-weight: 400;
 }
 @font-face {
   font-family: "Alegreya";
-  src: url('assets/fonts/Alegreya/Alegreya-Italic.ttf');
+  src: url('../webfonts/Alegreya-Italic.ttf');
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Alegreya";
-  src: url('assets/fonts/Alegreya/Alegreya-Bold.ttf');
+  src: url('../webfonts/Alegreya-Bold.ttf');
   font-weight: 700;
 }
 @font-face {
   font-family: "Alegreya";
-  src: url('assets/fonts/Alegreya/Alegreya-BoldItalic.ttf');
+  src: url('../webfonts/Alegreya-BoldItalic.ttf');
   font-weight: 700;
   font-style: italic;
 }
 /* Source Code Pro (mono) */
 @font-face {
   font-family: "Source Code Pro";
-  src: url('assets/fonts/SourceCodePro/SourceCodePro-Regular.ttf');
+  src: url('../webfonts/SourceCodePro-Regular.ttf');
   font-weight: 400;
 }
 @font-face {
   font-family: "Source Code Pro";
-  src: url('assets/fonts/SourceCodePro/SourceCodePro-Italic.ttf');
+  src: url('../webfonts/SourceCodePro-Italic.ttf');
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Source Code Pro";
-  src: url('assets/fonts/SourceCodePro/SourceCodePro-Bold.ttf');
+  src: url('../webfonts/SourceCodePro-Bold.ttf');
   font-weight: 700;
 }
 @font-face {
   font-family: "Source Code Pro";
-  src: url('assets/fonts/SourceCodePro/SourceCodePro-BoldItalic.ttf');
+  src: url('../webfonts/SourceCodePro-BoldItalic.ttf');
   font-weight: 700;
   font-style: italic;
 }
@@ -90,7 +90,7 @@
 content, .typora-export-content  /* typora */
 {
   display: block;
-  background-image: url("assets/torillic-bg.jpg");
+  background-image: url("../img/torillic-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -163,12 +163,12 @@ nav a.current {
     inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1),
     1cm 1cm 1cm 1cm rgba(0, 0, 0, 0.5);
   transform-style: preserve-3d;
-  background-image: url("assets/paper-texture.png");
+  background-image: url("../img/paper-texture.png");
   background-color: var(--offwhite);
   /* Add columns */
-  column-count: 2;
+  /*column-count: 2;
   column-gap: 0.5cm;
-  column-width: 8cm;
+  column-width: 8cm;*/
 }
 .torillic-page:first-child, /* generic HTML */
 .torillic-page > *:first-child,
@@ -230,12 +230,12 @@ h1, h2, h3, h4 {
 /* Each heading */
 h1 {
   font-size: 36pt;
-  column-span: all;
+  /* column-span: all; */
   break-before: page;
 }
 h2 {
   font-size: 28pt;
-  column-span: all;
+  /* column-span: all; */
 }
 h3 {
   font-size: 24pt;
@@ -261,7 +261,7 @@ hr {
   border-bottom: 2pt solid transparent;
   border-left-style: solid;
   border-left-color: var(--red);
-  column-span: none;
+  /* column-span: none; */
 
   /* Top-level hr (aka page delineator) */
   border-left-width: 8cm;
@@ -379,8 +379,12 @@ pre,  /* generic HTML */
 /** Images **/
 
 img {
+  background-image: none;
+}
+
+img.torillic-with-splash {
   max-width: 100%;
-  background-image: url(assets/splash.png);
+  background-image: url(../img/splash.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -388,21 +392,19 @@ img {
   margin: -5mm;
 }
 
-img.torillic-no-splash {
-  background-image: none;
-}
-
 /** Manual breaking **/
 
 /* column (can use a blank h3) */
+/*
 .break-column-before {
   break-before: column;
 }
 .break-column-after {
   break-after: column;
 }
+*/
 h3:empty {
-  break-before: column;
+  /* break-before: column; */
   margin: 0;
   line-height: 0;
 }
@@ -412,11 +414,11 @@ h3:empty + * {
 /* page (can use a blank h1) */
 .break-page-before {
   break-before: page;
-  column-span: all;
+ /* column-span: all; */
 }
 .break-page-after {
   break-after: page;
-  column-span: all;
+ /* column-span: all; */
 }
 h1:empty {
   break-before: page;
@@ -431,7 +433,7 @@ h1:empty + * {
 /* Compress for small windows */
 @media only screen and (max-width: 22cm) {
   #write, #typora-source {
-    column-count: 1;
+    /* column-count: 1; */
     width: calc(100% - 2rem);
     margin: 1rem;
   }
@@ -448,47 +450,13 @@ h1:empty + * {
 }
 @media print and (max-width: 14cm) {
   #write, #typora-source {
-    column-count: 1;
+    /* column-count: 1; */
     margin: 1cm;
-    column-width: 100%;
+    /* column-width: 100%; */
     width: 100%;
   }
 }
 
-
-/** Substitutions **/
-img[src="copper"], img[src="c"],  /* generic HTML */
-.md-image[data-src="copper"]  /* typora */
-{
-  display: inline;
-  background-image: none;
-  content:url("torillic/copper.png");
-}
-img[src="silver"], img[src="s"],  /* generic HTML */
-.md-image[data-src="silver"]  /* typora */
-{
-  display: inline;
-  background-image: none;
-  content:url("torillic/silver.png");
-}
-img[src="electrum"], img[src="e"],  /* generic HTML */
-.md-image[data-src="electrum"]  /* typora */
-{
-  display: inline;
-  background-image: none;
-  content:url("torillic/electrum.png");
-}
-img[src="gold"], img[src="g"],  /* generic HTML */
-.md-image[data-src="gold"]  /* typora */
-{
-  display: inline;
-  background-image: none;
-  content:url("torillic/gold.png");
-}
-img[src="platinum"], img[src="p"],  /* generic HTML */
-.md-image[data-src="platinum"]  /* typora */
-{
-  display: inline;
-  background-image: none;
-  content:url("torillic/platinum.png");
+.big {
+  font-size: 22pt;
 }

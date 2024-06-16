@@ -1,0 +1,6 @@
+span.rev { unicode-bidi:bidi-override; direction:rtl }
+span.rev.email:before { content:"moc.li" }
+span.rev.email:after { content:"@nohcniv.enniroc :léM" }
+span.rev.phone:before { content:"30 97 81 18 " }
+span.rev.phone:after { content:" 33+ :léT" }
+
